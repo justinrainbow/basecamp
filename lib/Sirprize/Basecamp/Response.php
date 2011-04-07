@@ -27,7 +27,7 @@ class Response
 	
 	
     
-    public function __construct(\Zend_Http_Response $httpResponse)
+    public function __construct(\Zend\Http\Response $httpResponse)
     {
     	$this->_httpResponse = $httpResponse;
 		

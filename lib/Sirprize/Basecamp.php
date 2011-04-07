@@ -86,7 +86,7 @@ class Basecamp
 	}
 	
 	
-	public function setHttpClient(\Zend_Http_Client $httpClient)
+	public function setHttpClient(\Zend\Http\Client $httpClient)
 	{
 		$this->_httpClient = $httpClient;
 		return $this;
@@ -97,8 +97,7 @@ class Basecamp
     {
         if($this->_httpClient === null)
 		{
-			require_once 'Zend/Http/Client.php';
-            $this->_httpClient = new \Zend_Http_Client();
+            $this->_httpClient = new \Zend\Http\Client();
         }
 
         return $this->_httpClient;

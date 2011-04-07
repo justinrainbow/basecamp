@@ -51,7 +51,7 @@ class Collection extends \SplObjectStorage
 	}
 	
 	
-	public function setHttpClient(\Zend_Http_Client $httpClient)
+	public function setHttpClient(\Zend\Http\Client $httpClient)
 	{
 		$this->_httpClient = $httpClient;
 		return $this;

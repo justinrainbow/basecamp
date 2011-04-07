@@ -29,8 +29,8 @@ class Sirprize_BasecampTest extends PHPUnit_Framework_TestCase
 	protected function setUp()
     {
 		require_once 'Zend/Http/Client.php';
-        $this->_httpClient = new \Zend_Http_Client();
-		$this->_httpClient->setAdapter('Zend_Http_Client_Adapter_Test');
+        $this->_httpClient = new \Zend\Http\Client();
+		$this->_httpClient->setAdapter('Zend\Http\Client_Adapter_Test');
 		$this->_httpClient->getAdapter()->setNextRequestWillFail(true);
 			
 		$config = array(
