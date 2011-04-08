@@ -45,7 +45,6 @@ class Log extends \Sirprize\Basecamp\Milestone\Entity\Observer\Abstrakt
 	{
 		if($this->_log === null)
 		{
-			require_once 'Sirprize/Basecamp/Exception.php';
 			throw new \Sirprize\Basecamp\Exception('call setLog() before '.__METHOD__);
 		}
 		

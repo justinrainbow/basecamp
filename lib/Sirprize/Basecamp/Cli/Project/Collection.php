@@ -17,7 +17,6 @@ class Collection extends \Sirprize\Basecamp\Project\Collection
 	 */
 	public function getProjectInstance()
 	{
-		require_once 'Sirprize/Basecamp/Cli/Project/Entity.php';
 		$project = new \Sirprize\Basecamp\Cli\Project\Entity();
 		$project
 			->setHttpClient($this->_getHttpClient())

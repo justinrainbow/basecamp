@@ -107,7 +107,6 @@ class Basecamp
 	
 	public function getProjectsInstance()
 	{
-		require_once 'Sirprize/Basecamp/Project/Collection.php';
 		$projects = new \Sirprize\Basecamp\Project\Collection();
 		$projects
 			->setBasecamp($this)
@@ -120,7 +119,6 @@ class Basecamp
 	
 	public function getPersonsInstance()
 	{
-		require_once 'Sirprize/Basecamp/Person/Collection.php';
 		$persons = new \Sirprize\Basecamp\Person\Collection();
 		$persons
 			->setBasecamp($this)
@@ -133,7 +131,6 @@ class Basecamp
 	
 	public function getMilestonesInstance()
 	{
-		require_once 'Sirprize/Basecamp/Milestone/Collection.php';
 		$milestones = new \Sirprize\Basecamp\Milestone\Collection();
 		$milestones
 			->setBasecamp($this)
@@ -144,7 +141,6 @@ class Basecamp
 	
 	public function getCommentsInstance()
 	{
-		require_once 'Sirprize/Basecamp/Comment/Collection.php';
 		$comments = new \Sirprize\Basecamp\Comment\Collection();
 		$comments
 			->setBasecamp($this)
@@ -155,7 +151,6 @@ class Basecamp
 	
 	public function getAttachmentsInstance()
 	{
-		require_once 'Sirprize/Basecamp/Attachment/Collection.php';
 		$attachments = new \Sirprize\Basecamp\Attachment\Collection();
 		$attachments
 			->setBasecamp($this)
@@ -166,7 +161,6 @@ class Basecamp
 	
 	public function getTodoListsInstance()
 	{
-		require_once 'Sirprize/Basecamp/TodoList/Collection.php';
 		$todoLists = new \Sirprize\Basecamp\TodoList\Collection();
 		$todoLists
 			->setBasecamp($this)
@@ -179,7 +173,6 @@ class Basecamp
 	
 	public function getTodoItemsInstance()
 	{
-		require_once 'Sirprize/Basecamp/TodoItem/Collection.php';
 		$todoListitems = new \Sirprize\Basecamp\TodoItem\Collection();
 		$todoListitems
 			->setBasecamp($this)
@@ -192,7 +185,6 @@ class Basecamp
 	
 	public function getSchemaInstance()
 	{
-		require_once 'Sirprize/Basecamp/Schema.php';
 		$schema = new \Sirprize\Basecamp\Schema();
 		$schema->setBasecamp($this);
 		return $schema;

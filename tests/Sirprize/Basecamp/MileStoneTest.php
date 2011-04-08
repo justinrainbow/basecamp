@@ -28,7 +28,6 @@ class Sirprize_Basecamp_MilestoneTest extends PHPUnit_Framework_TestCase
 	
 	protected function setUp()
     {
-		require_once 'Zend/Http/Client.php';
         $this->_httpClient = new \Zend\Http\Client();
 		$this->_httpClient->setAdapter('Zend\Http\Client_Adapter_Test');
 		$this->_httpClient->getAdapter()->setNextRequestWillFail(true);
@@ -39,7 +38,6 @@ class Sirprize_Basecamp_MilestoneTest extends PHPUnit_Framework_TestCase
 			'password' => TESTS_SIPRIZE_BASECAMP_PASSWORD
 		);
 
-		require_once 'Sirprize/Basecamp.php';
 		$this->_basecamp = new \Sirprize\Basecamp($config);
 	}
 	
@@ -52,16 +50,12 @@ class Sirprize_Basecamp_MilestoneTest extends PHPUnit_Framework_TestCase
 	
 	public function testFluidInterface()
     {
-		require_once 'Sirprize/Basecamp/Milestone/Entity/Observer/Log.php';
 		$log = new \Sirprize\Basecamp\Milestone\Entity\Observer\Log();
 		
-		require_once 'Sirprize/Basecamp/Milestone/Entity.php';
 		$milestone = new \Sirprize\Basecamp\Milestone\Entity();
 		
-		require_once 'Sirprize/Basecamp/Date.php';
 		$deadline = new \Sirprize\Basecamp\Date('2010-12-23');
 
-		require_once 'Sirprize/Basecamp/Id.php';
 		$projectId = new \Sirprize\Basecamp\Id('4311451');
 		$responsiblePartyId = new \Sirprize\Basecamp\Id('4793703');
 		
@@ -84,14 +78,11 @@ class Sirprize_Basecamp_MilestoneTest extends PHPUnit_Framework_TestCase
 	public function testCreateXmlExceptionTitleMissing()
     {
         try {
-			require_once 'Sirprize/Basecamp/Milestone/Entity.php';
 			$milestone = new \Sirprize\Basecamp\Milestone\Entity();
 			$milestone->setBasecamp($this->_basecamp);
 			
-			require_once 'Sirprize/Basecamp/Date.php';
 			$deadline = new \Sirprize\Basecamp\Date('2010-12-23');
 
-			require_once 'Sirprize/Basecamp/Id.php';
 			$responsiblePartyId = new \Sirprize\Basecamp\Id('4793703');
 			
 			$milestone
@@ -114,14 +105,11 @@ class Sirprize_Basecamp_MilestoneTest extends PHPUnit_Framework_TestCase
 	public function testCreateXmlExceptionDeadlineMissing()
     {
         try {
-			require_once 'Sirprize/Basecamp/Milestone/Entity.php';
 			$milestone = new \Sirprize\Basecamp\Milestone\Entity();
 			$milestone->setBasecamp($this->_basecamp);
 			
-			require_once 'Sirprize/Basecamp/Date.php';
 			$deadline = new \Sirprize\Basecamp\Date('2010-12-23');
 
-			require_once 'Sirprize/Basecamp/Id.php';
 			$responsiblePartyId = new \Sirprize\Basecamp\Id('4793703');
 			
 			$milestone
@@ -144,14 +132,11 @@ class Sirprize_Basecamp_MilestoneTest extends PHPUnit_Framework_TestCase
 	public function testCreateXmlExceptionResponsiblePartyIdMissing()
     {
         try {
-			require_once 'Sirprize/Basecamp/Milestone/Entity.php';
 			$milestone = new \Sirprize\Basecamp\Milestone\Entity();
 			$milestone->setBasecamp($this->_basecamp);
 			
-			require_once 'Sirprize/Basecamp/Date.php';
 			$deadline = new \Sirprize\Basecamp\Date('2010-12-23');
 
-			require_once 'Sirprize/Basecamp/Id.php';
 			$responsiblePartyId = new \Sirprize\Basecamp\Id('4793703');
 			
 			$milestone

@@ -36,7 +36,6 @@ class AllTests
 	{
 		$suite = new PHPUnit_Framework_TestSuite('Sirprize');
 		
-		require_once 'Sirprize/AllTests.php';
         $suite->addTest(Sirprize_AllTests::suite());
         return $suite;
 	}

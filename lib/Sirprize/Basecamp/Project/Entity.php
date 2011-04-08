@@ -178,7 +178,6 @@ class Entity
 	{
 		if($this->_loaded && !$force)
 		{
-			require_once 'Sirprize/Basecamp/Exception.php';
 			throw new \Sirprize\Basecamp\Exception('entity has already been loaded');
 		}
 		
@@ -186,7 +185,6 @@ class Entity
 		$this->_loaded = true;
 		$array = (array) $xml;
 		
-		require_once 'Sirprize/Basecamp/Id.php';
 		$id = new \Sirprize\Basecamp\Id($array[self::_ID]);
 		
 		$showAnnouncement = ($array[self::_SHOW_ANNOUNCEMENT] == 'true');
@@ -219,17 +217,14 @@ class Entity
 
 		if($targetProject === null)
 		{
-			require_once 'Sirprize/Basecamp/Exception.php';
 			throw new \Sirprize\Basecamp\Exception("target project doesn't exist");
 		}
 
 		if($projects->getResponse()->isError())
 		{
-			require_once 'Sirprize/Basecamp/Exception.php';
 			throw new \Sirprize\Basecamp\Exception("target project couldn't be loaded");
 		}
 		
-		require_once 'Sirprize/Basecamp/Schema/Export.php';
 		$export = new \Sirprize\Basecamp\Schema\Export();
 		$xml = $export->getProjectXml($this, false);
 		$schema = $this->_getBasecamp()->getSchemaInstance();
@@ -249,17 +244,14 @@ class Entity
 
 		if($targetProject === null)
 		{
-			require_once 'Sirprize/Basecamp/Exception.php';
 			throw new \Sirprize\Basecamp\Exception("target project doesn't exist");
 		}
 
 		if($projects->getResponse()->isError())
 		{
-			require_once 'Sirprize/Basecamp/Exception.php';
 			throw new \Sirprize\Basecamp\Exception("target project couldn't be loaded");
 		}
 		
-		require_once 'Sirprize/Basecamp/Schema/Export.php';
 		$export = new \Sirprize\Basecamp\Schema\Export();
 		$xml = $export->getProjectXml($this, true, $referenceMilestone);
 		$schema = $this->_getBasecamp()->getSchemaInstance();
@@ -274,7 +266,6 @@ class Entity
 	{
 		$this->_checkIsLoaded();
 		
-		require_once 'Sirprize/Basecamp/Schema/Export.php';
 		$export = new \Sirprize\Basecamp\Schema\Export();
 		
 		$xml
@@ -294,7 +285,6 @@ class Entity
 	{
 		if($this->_basecamp === null)
 		{
-			require_once 'Sirprize/Basecamp/Exception.php';
 			throw new \Sirprize\Basecamp\Exception('call setBasecamp() before '.__METHOD__);
 		}
 		
@@ -307,7 +297,6 @@ class Entity
 	{
 		if($this->_httpClient === null)
 		{
-			require_once 'Sirprize/Basecamp/Exception.php';
 			throw new \Sirprize\Basecamp\Exception('call setHttpClient() before '.__METHOD__);
 		}
 		
@@ -326,7 +315,6 @@ class Entity
 	{
 		if(!$this->_loaded)
 		{
-			require_once 'Sirprize/Basecamp/Exception.php';
 			throw new \Sirprize\Basecamp\Exception('call load() before '.__METHOD__);
 		}
 	}

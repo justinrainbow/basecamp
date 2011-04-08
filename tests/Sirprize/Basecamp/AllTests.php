@@ -36,7 +36,6 @@ class Sirprize_Basecamp_AllTests
 	{
 		$suite = new PHPUnit_Framework_TestSuite('Sirprize // Sirprize // Basecamp');
 		
-		require_once 'Sirprize/Basecamp/MilestoneTest.php';
 		$suite->addTestSuite('Sirprize_Basecamp_MilestoneTest');
 		return $suite;
 	}

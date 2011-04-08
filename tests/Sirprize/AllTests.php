@@ -37,10 +37,8 @@ class Sirprize_AllTests
 	{
 		$suite = new PHPUnit_Framework_TestSuite('Sirprize // Sirprize');
 		
-		require_once 'Sirprize/BasecampTest.php';
 		$suite->addTestSuite('Sirprize_BasecampTest');
 		
-		require_once 'Sirprize/Basecamp/AllTests.php';
 		$suite->addTest(Sirprize_Basecamp_AllTests::suite());
 		return $suite;
 	}

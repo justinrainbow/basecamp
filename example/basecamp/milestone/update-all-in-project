@@ -35,7 +35,6 @@ if($milestones->getResponse()->isError())
 
 foreach($milestones as $milestone)
 {
-	require_once 'Sirprize/Basecamp/Date.php';
 	$deadline = new \Sirprize\Basecamp\Date('2010-08-17');
 	
 	$milestone

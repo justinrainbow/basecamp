@@ -28,7 +28,6 @@ class Sirprize_BasecampTest extends PHPUnit_Framework_TestCase
 	
 	protected function setUp()
     {
-		require_once 'Zend/Http/Client.php';
         $this->_httpClient = new \Zend\Http\Client();
 		$this->_httpClient->setAdapter('Zend\Http\Client_Adapter_Test');
 		$this->_httpClient->getAdapter()->setNextRequestWillFail(true);
@@ -39,7 +38,6 @@ class Sirprize_BasecampTest extends PHPUnit_Framework_TestCase
 			'password' => TESTS_SIPRIZE_BASECAMP_PASSWORD
 		);
 
-		require_once 'Sirprize/Basecamp.php';
 		$this->_basecamp = new \Sirprize\Basecamp($config);
 	}
 	
@@ -58,7 +56,6 @@ class Sirprize_BasecampTest extends PHPUnit_Framework_TestCase
 				'password' => TESTS_SIPRIZE_BASECAMP_PASSWORD
 			);
 
-			require_once 'Sirprize/Basecamp.php';
 			$basecamp = new \Sirprize\Basecamp($config);
             $this->fail('Expected \Sirprize\Basecamp\Exception not thrown');
         }
@@ -78,7 +75,6 @@ class Sirprize_BasecampTest extends PHPUnit_Framework_TestCase
 				'password' => TESTS_SIPRIZE_BASECAMP_PASSWORD
 			);
 
-			require_once 'Sirprize/Basecamp.php';
 			$basecamp = new \Sirprize\Basecamp($config);
             $this->fail('Expected \Sirprize\Basecamp\Exception not thrown');
         }
@@ -98,7 +94,6 @@ class Sirprize_BasecampTest extends PHPUnit_Framework_TestCase
 				'username' => TESTS_SIPRIZE_BASECAMP_USERNAME
 			);
 
-			require_once 'Sirprize/Basecamp.php';
 			$basecamp = new \Sirprize\Basecamp($config);
             $this->fail('Expected \Sirprize\Basecamp\Exception not thrown');
         }
